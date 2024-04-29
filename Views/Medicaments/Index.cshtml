@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GSB_Gestion_CR.Models.Medicament>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listes des Medicaments</h1>
+
+<p>
+    <a asp-action="Create">Nouveaux</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.Label("Nom Commercial")
+            </th>
+            <th>
+                @Html.Label("Composition")
+            </th>
+            <th>
+                @Html.Label("Effets")
+            </th>
+            <th>
+                @Html.Label("Contre Indication")
+            </th>
+            <th>
+                @Html.Label("Prix")
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.SsmaTimeStamp) *@
+            </th>
+            <th>
+                @Html.Label("Fonction")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedNomcommercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedComposition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedEffets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedContreindic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedPrixechantillon)
+            </td>
+            <td>
+               @*  @Html.DisplayFor(modelItem => item.SsmaTimeStamp) *@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamCodeNavigation.FamCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MedDepotlegal">Editer</a> |
+                <a asp-action="Details" asp-route-id="@item.MedDepotlegal">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.MedDepotlegal">Suppression</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

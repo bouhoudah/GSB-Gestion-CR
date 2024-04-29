@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">Bienvenue dans l'application de gestion de compte rendu</h1>
+            <p class="lead">Commencez par vous connecter ou vous inscrire pour accéder à votre compte.</p>
+            <a href="/Identity/Account/Login" class="btn btn-primary btn-lg">Se connecter</a>
+            <a href="/Identity/Account/Register" class="btn btn-secondary btn-lg">S'inscrire</a>
+
+        </div>
+    </div>
+</body>
+</html>
